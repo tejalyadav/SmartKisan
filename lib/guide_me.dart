@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'which_crop.dart';
+import 'where_to_sell.dart';
+import 'where_to_store.dart';
 
 class GuideMe extends StatelessWidget {
   // This widget is the root of your application.
@@ -39,8 +42,77 @@ class MyHomePage  extends StatelessWidget {
                 height: 200,
                 width: 200),
 
-                     ],
 
+          SizedBox(
+            width: 300,
+            child: ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                shape: StadiumBorder(),
+                side: BorderSide(color: Colors.black),
+                primary: Colors.green,
+                minimumSize: const Size.fromHeight(55), // NEW
+              ),
+              onPressed: () {
+                //_askCameraPermission();
+                Navigator.push(context, new MaterialPageRoute(
+                  builder: (context) =>
+                  new WhichCrop(),
+                ));
+              },
+              label: Text('Which Crop to grow?'),
+              icon: Icon(Icons.light),
+            ),),
+
+            Image.asset('assets/images/Warehouses.jpg',
+                height: 200,
+                width: 200),
+
+
+            SizedBox(
+              width: 300,
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  shape: StadiumBorder(),
+                  side: BorderSide(color: Colors.black),
+                  primary: Colors.green,
+                  minimumSize: const Size.fromHeight(55), // NEW
+                ),
+                onPressed: () {
+                  //_askCameraPermission();
+                  Navigator.push(context, new MaterialPageRoute(
+                    builder: (context) =>
+                    new Warehouses(),
+                  ));
+                },
+                label: Text('Which to store produce?'),
+                icon: Icon(Icons.light),
+              ),),
+
+            Image.asset('assets/images/Where_to_sell.jpg',
+                height: 200,
+                width: 200),
+
+
+            SizedBox(
+              width: 300,
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  shape: StadiumBorder(),
+                  side: BorderSide(color: Colors.black),
+                  primary: Colors.green,
+                  minimumSize: const Size.fromHeight(55), // NEW
+                ),
+                onPressed: () {
+                  //_askCameraPermission();
+                  Navigator.push(context, new MaterialPageRoute(
+                    builder: (context) =>
+                    new WhereSell(),
+                  ));
+                },
+                label: Text('Where to sell?'),
+                icon: Icon(Icons.light),
+              ),),
+          ],
 
         ),
       ),
